@@ -12,8 +12,14 @@ AddProject(mc_state_observation
   DEPENDS mc_rtc
 )
 
+AddCatkinProject(mc_plugin_footstep_plan_msgs
+  GITHUB isri-aist/mc_plugin_footstep_plan_msgs
+  GIT_TAG master
+  WORKSPACE mc_rtc_ws
+)
+
 AddProject(lipm_walking_controller
   GITHUB arntanguy/lipm_walking_controller
   GIT_TAG rebase_stabilizer_ana
-  DEPENDS copra mc_state_observation
+  DEPENDS copra mc_state_observation mc_plugin_footstep_plan_msgs
 )
